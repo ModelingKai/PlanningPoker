@@ -5,6 +5,13 @@
 
 [イベントの流れ](/docs/イベントの流れ.md)
 
+###  ロードマップ
+
+- RDRA 1週 (2回)
+- EventStorming 1週 (2回)
+- コードを書く (?回)
+- (RDRA, EventStormingに戻る)
+
 ## 参考資料
 
 ### RDRA
