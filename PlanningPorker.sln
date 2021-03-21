@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanningPoker", "PlanningPoker\PlanningPoker.csproj", "{30F80004-C35F-47B0-8E3F-3C892B0C6EC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30F80004-C35F-47B0-8E3F-3C892B0C6EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F80004-C35F-47B0-8E3F-3C892B0C6EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F80004-C35F-47B0-8E3F-3C892B0C6EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F80004-C35F-47B0-8E3F-3C892B0C6EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
