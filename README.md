@@ -9,6 +9,8 @@
 
 ### RDRA
 
+[RDRAのやり方とやってみた話
+](https://qiita.com/98lerr/items/8fccb37735729acb24cd)
 
 ### ADR
 
