@@ -9,7 +9,6 @@
     <Import_RootNamespace>Docs</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)README.md" />
     <None Include="$(MSBuildThisFileDirectory)イベントの流れ.md" />
   </ItemGroup>
 </Project>
