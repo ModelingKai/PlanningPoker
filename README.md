@@ -9,10 +9,10 @@
 
 ### RDRA
 
-https://qiita.com/fuubit/items/dbb22435202acbe48849
+[アーキテクチャの「なぜ？」を記録する！ADRってなんぞや？](https://qiita.com/fuubit/items/dbb22435202acbe48849)
 
 ### ADR
 
-https://jnuank.hatenablog.com/entry/2020/12/24/230329
+[ADRを試してみる](https://jnuank.hatenablog.com/entry/2020/12/24/230329)
 
 ### EventStorming
