@@ -5,18 +5,13 @@ VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlanningPoker", "PlanningPoker\PlanningPoker.csproj", "{30F80004-C35F-47B0-8E3F-3C892B0C6EC5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4E5CF321-5766-4306-BE63-997EC1E2CA02}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{7EA23F1B-66E8-412C-9303-7AE7CF0FF538}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ADR", "docs\ADR\ADR.shproj", "{539C2315-9512-4DEE-984F-3674849AC7DF}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Docs", "docs\Docs\Docs.shproj", "{2707C7DB-6777-47FC-9697-2B24231FDBC4}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Docs", "Docs\Docs.shproj", "{2707C7DB-6777-47FC-9697-2B24231FDBC4}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		docs\Docs\Docs.projitems*{2707c7db-6777-47fc-9697-2b24231fdbc4}*SharedItemsImports = 13
-		docs\ADR\ADR.projitems*{539c2315-9512-4dee-984f-3674849ac7df}*SharedItemsImports = 13
+		Docs\Docs.projitems*{2707c7db-6777-47fc-9697-2b24231fdbc4}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,10 +29,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{539C2315-9512-4DEE-984F-3674849AC7DF} = {4E5CF321-5766-4306-BE63-997EC1E2CA02}
-		{2707C7DB-6777-47FC-9697-2B24231FDBC4} = {4E5CF321-5766-4306-BE63-997EC1E2CA02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9B5B7FC-E3A7-4DA5-90EA-5769D8ACF31B}

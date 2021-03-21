@@ -11,4 +11,7 @@
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)イベントの流れ.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ADR\" />
+  </ItemGroup>
 </Project>
