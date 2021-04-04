@@ -17,6 +17,7 @@
 ### RDRA
 
 - [RDRAのやり方とやってみた話](https://qiita.com/98lerr/items/8fccb37735729acb24cd)
+- [2020\-07\-22 テレワーク下の要件定義（RDRA：ラドラ）](https://note.com/suwash/n/n3660b6067ab7)
 
 ### ADR
 
