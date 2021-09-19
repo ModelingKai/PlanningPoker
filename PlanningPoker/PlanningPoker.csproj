@@ -8,4 +8,7 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="..\Docs\開催履歴.md" />
+    </ItemGroup>
 </Project>

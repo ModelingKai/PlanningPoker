@@ -15,6 +15,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{20CD069F-2CFC-4446-8BC0-F8F7647983BA}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\イベントの流れ.md = Docs\イベントの流れ.md
+		Docs\開催履歴.md = Docs\開催履歴.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADR", "ADR", "{B2B37E95-E274-4575-AB31-24455CC4AAA7}"
