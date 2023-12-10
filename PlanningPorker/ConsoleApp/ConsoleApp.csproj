@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <!-- <ProjectReference Include="..\DaprClient\DaprClient.csproj" /> -->
     <ProjectReference Include="..\EventStoreClient\EventStoreClient.csproj" />
   </ItemGroup>
 
