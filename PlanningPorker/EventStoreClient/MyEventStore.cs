@@ -66,7 +66,29 @@ public class MyEventStore
         foreach (var @event in events) {
             Console.WriteLine(Encoding.UTF8.GetString(@event.Event.Data.ToArray()));
         }
+    }
 
+    public async ValueTask<List<ResolvendEvent>> ReadAll(string eventStreamName) {
+        var settings = EventStoreClientSettings.Create("esdb://127.0.0.1:2113?tls=false&keepAliveTimeout=10000&keepAliveInterval=10000");
+        var client = new EventStoreClient(settings);
 
+        CancellationTokenSource source = new CancellationTokenSource();
+        CancellationToken cancellationToken = source.Token;
+        
+        var result = client.ReadStreamAsync(
+            Direction.Forwards,
+            eventStreamName,
+            StreamPosition.Start,
+            cancellationToken: cancellationToken);
+
+        var events = result.ToListAsync(cancellationToken);
+
+        var results = new List<string>();
+
+        foreach (var @event in await events) {
+            results.Add(Encoding.UTF8.GetString(@event.Event.Data.ToArray()));
+        }
+
+        return results;
     }
 }
