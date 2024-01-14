@@ -26,7 +26,7 @@ public class DecidedPointQueryService {
 
 [Serializable]
 public struct DecidedPoints {
-    private List<DecidedPoint> _list = new List<DecidedPoint>;
+    private List<DecidedPoint> _list = new List<DecidedPoint>();
 
     public DecidedPoints()
     {
