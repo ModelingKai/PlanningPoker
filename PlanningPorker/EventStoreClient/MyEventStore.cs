@@ -7,9 +7,14 @@ using EventStore.Client;
 
 public class MyEventStore
 {
+    [Serializable]
 	public class TestEvent {
 		public string? EntityId      { get; set; }
 		public string? ImportantData { get; set; }
+
+        public void ConsoleWriteTestEvent() {
+            Console.WriteLine($"EntityId = {EntityId}, ImportantData = {ImportantData}");
+        }
 	}
 
     public async Task SubscribeToStream() {
@@ -19,11 +24,27 @@ public class MyEventStore
         await client.SubscribeToStreamAsync("some-stream",
 			FromStream.Start,
 			async (subscription, evnt, cancellationToken) => {
-			    	Console.WriteLine($"Received event {evnt.OriginalEventNumber}@{evnt.OriginalStreamId} {evnt.Event.EventType} {Encoding.UTF8.GetString(evnt.Event.Data.ToArray())}");
-					await HandleEvent(evnt);
+			    	// Console.WriteLine($"Received event {evnt.OriginalEventNumber}@{evnt.OriginalStreamId} {evnt.Event.EventType} {Encoding.UTF8.GetString(evnt.Event.Data.ToArray())}");
+
+                    switch(evnt.Event.EventType) {
+                        case "TestEvent":
+                            await HandleEvent(evnt);
+                            break;
+                       default:
+                    		throw new Exception("仮");		
+                    }
 				});
+
+//        {
+//   "EntityId": "880ee532e46a40508f394a18549b932b",
+//   "ImportantData": "I wrote my first event!"
+// } 
     }
    	private static Task HandleEvent(ResolvedEvent evnt) {
+        var json = Encoding.UTF8.GetString(evnt.Event.Data.ToArray());
+        var testEvent = JsonSerializer.Deserialize<TestEvent>(json) ?? throw new Exception("UWAAAAAA");
+        testEvent.ConsoleWriteTestEvent();
+
 		return Task.CompletedTask;
 	}
 
@@ -68,7 +89,7 @@ public class MyEventStore
         }
     }
 
-    public async ValueTask<List<ResolvendEvent>> ReadAll(string eventStreamName) {
+    public async ValueTask<List<string>> ReadAll(string eventStreamName) {
         var settings = EventStoreClientSettings.Create("esdb://127.0.0.1:2113?tls=false&keepAliveTimeout=10000&keepAliveInterval=10000");
         var client = new EventStoreClient(settings);
 
