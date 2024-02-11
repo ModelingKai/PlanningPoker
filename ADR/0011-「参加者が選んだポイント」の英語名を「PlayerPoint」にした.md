@@ -15,6 +15,10 @@
     - Pointとするか
     - PlayerChoosenPointとするか
 
+## Status
+
+Superseded: 別のADRに置き換えられた
+- [0012](./0012-「参加者が選んだポイント」の英語名を「PlayerEstimation」にした.md)
 
 ## 決定（Decision）
 
