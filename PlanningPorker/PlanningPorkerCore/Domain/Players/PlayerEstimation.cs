@@ -1,7 +1,7 @@
 namespace PlanningPorkerCore.Domain.Players;
 
 [Serializable]
-public class PlayerEstimation
+public record PlayerEstimation
 {
     public int Value { get; init; }
 

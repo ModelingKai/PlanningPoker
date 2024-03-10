@@ -1,7 +1,7 @@
 namespace PlanningPorkerCore.Domain.Players;
 
 [Serializable]
-public class EstimatedByPlayerEvent {
+public record EstimatedByPlayerEvent {
 
     public PlayerId Id { get; init; }
 

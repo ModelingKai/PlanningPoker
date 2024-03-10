@@ -12,6 +12,7 @@ public class xxxUseCaseTest
     {
         // Arrange（準備）
         var mock = new Mock<IEventStore>();
+
         // Act(実行)
         var useCase = new EstimatationUseCase(mock.Object);
         useCase.EstimatedByPlayer(new PlayerId("123"), new PlayerEstimation(3));
@@ -19,23 +20,21 @@ public class xxxUseCaseTest
         // Assert(検証)
         mock.Verify(x => x.Store(new EstimatedByPlayerEvent(new PlayerId("123"), new PlayerEstimation(3))), Times.AtLeastOnce);
         
-        // Assert.True(mock.Store<EstimatedByPlayerEvent>(new EstimatedByPlayerEvent(new PlayerId("123"), new PlayerEstimation(3))));
-
-        // Domainのクラスのメソッドが動いたことが検証されて欲しい？
     }
 }
 
 internal class EstimatationUseCase
 {
-    private IEventStore mock;
+    private IEventStore client;
 
-    internal EstimatationUseCase(IEventStore mock)
+    internal EstimatationUseCase(IEventStore client)
     {
-        this.mock = mock;
+        this.client = client;
     }
 
     internal void EstimatedByPlayer(PlayerId playerId, PlayerEstimation playerEstimation)
     {
-        throw new NotImplementedException();
+        var event_ = new EstimatedByPlayerEvent(playerId, playerEstimation);
+        this.client.Store(event_);
     }
 }

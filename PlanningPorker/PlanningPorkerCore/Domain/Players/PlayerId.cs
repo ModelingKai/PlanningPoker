@@ -1,7 +1,7 @@
 namespace PlanningPorkerCore.Domain.Players;
 
 [Serializable]
-public class PlayerId
+public record PlayerId
 {
     public string Value { get; init; }
 
