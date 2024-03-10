@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using EventStore.Client;
 
-public class MyEventStore
+public class MyEventStore : IEventStore
 {
     [Serializable]
 	public class TestEvent {
@@ -111,5 +111,27 @@ public class MyEventStore
         }
 
         return results;
+    }
+
+    public async Task Store<T>(T item)
+    {
+        var settings = EventStoreClientSettings.Create("esdb://127.0.0.1:2113?tls=false&keepAliveTimeout=10000&keepAliveInterval=10000");
+        var client = new EventStoreClient(settings);
+
+        CancellationTokenSource source = new CancellationTokenSource();
+        CancellationToken cancellationToken = source.Token;
+
+        var eventData = new EventData(
+            Uuid.NewUuid(),
+            "TestEvent",
+            JsonSerializer.SerializeToUtf8Bytes(item)
+        );
+
+        await client.AppendToStreamAsync(
+            "some-stream",
+            StreamState.Any,
+            new[] { eventData },
+            cancellationToken: cancellationToken
+        );
     }
 }

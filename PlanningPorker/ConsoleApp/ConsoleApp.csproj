@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EventStoreClient\EventStoreClient.csproj" />
+    <ProjectReference Include="..\PlanningPorkerCore\PlanningPorkerCore.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

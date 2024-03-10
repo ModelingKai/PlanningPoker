@@ -1,5 +1,4 @@
 
 public interface IEventStore {
-    void Store<T>(T item);
-
+    Task Store<T>(T item);
 }
