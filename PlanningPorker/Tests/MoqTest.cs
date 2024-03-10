@@ -9,7 +9,7 @@ public class MoqTest
     [Fact]
     public void Moqする()
     {
-        var mock = new Mock<IEventStore>();
+        var mock = new Mock<IMoqTestEventStore>();
         mock.Setup(x => x.Store(1)).Returns(10);
         mock.Setup(x => x.NotStore(1)).Returns(10);
         
@@ -23,19 +23,18 @@ public class MoqTest
         mock.VerifyAll();
     }
 
-
 }
 
-public interface IEventStore
+public interface IMoqTestEventStore
 {
     int Store(int value);
     int NotStore(int value);
 }
     
 public class TestTargetClass {
-    public IEventStore client { get; set;}
+    public IMoqTestEventStore client { get; set;}
 
-    public TestTargetClass(IEventStore client)
+    public TestTargetClass(IMoqTestEventStore client)
     {
         this.client = client;
     }
